@@ -76,6 +76,27 @@ export const liveGallery: LiveGalleryItem[] = [
   },
 ];
 
+export type FilmArchiveItem = {
+  number: string;
+  title: string;
+  artist: string;
+  youtubeId: string;
+  tags: string[];
+  featured?: boolean;
+  note: string;
+};
+
+export const filmArchive: FilmArchiveItem[] = [
+  { number: "001", title: "Safe And Sound", artist: "Psykovsky", youtubeId: "lvllqpqg1yA", tags: ["AI Film", "Music Visual", "Generative"], note: "Generative moving image for Psykovsky." },
+  { number: "002", title: "Alien Kaerlighed", artist: "Psykovsky feat. Kaerlighed", youtubeId: "H0GoE1uUFRo", tags: ["AI Film", "Generative Visuals", "Music Video"], featured: true, note: "A primary work in the AI film and music-visual archive." },
+  { number: "003", title: "Polenta", artist: "Psykovsky feat. Terra Fiamma", youtubeId: "YbCklNNRX7E", tags: ["AI Visuals", "Music Video", "Experimental"], note: "Experimental image synthesis for a high-velocity music video." },
+  { number: "004", title: "PSYSTREAM 3.0", artist: "Psykovsky", youtubeId: "VWCsCrquIKw", tags: ["Live Visuals", "Psychedelic", "Audiovisual"], note: "Long-form audiovisual archive and live visual documentation." },
+  { number: "005", title: "f02(3 24(3", artist: "Psykovsky", youtubeId: "19YwpmAHECw", tags: ["Experimental Film", "Generative", "Visual Art"], note: "Generative visual art for sound-driven moving image." },
+  { number: "006", title: "Alien Love Song — Episode 1 / 156 BPM", artist: "外星人的情歌 第 1 集", youtubeId: "GxZC0o-BH4Q", tags: ["AI Film", "Experimental", "Audiovisual"], note: "An experimental AI-film episode moving through rhythm, image, and narrative texture." },
+  { number: "007", title: "Extra Pearl / 225 BPM", artist: "Psykovsky feat. QQ IDOL", youtubeId: "ZUNjXrBHikg", tags: ["Generative Visuals", "Music Video", "AI"], note: "A fast-tempo generative visual work for Psykovsky and QQ IDOL." },
+  { number: "008", title: "Perpetual Existence", artist: "Morphinx & Krishpill", youtubeId: "DV08JyKTwFw", tags: ["TouchDesigner", "Realtime Visuals", "Generative"], featured: true, note: "Official video by Terra Space, developed with Morphinx using TouchDesigner." },
+];
+
 export const pointCloudStudies = [
   {
     title: "Point Cloud — Tree Study",
@@ -222,14 +243,26 @@ export const galleryProjects: GalleryProject[] = [
     title: "PERPETUAL EXISTENCE",
     subtitle: "Morphinx & Krishpill",
     slug: "perpetual-existence",
-    href: "/projects/perpetual-existence",
+    href: "/live-gallery",
     blurb: "Realtime audiovisual work developed with Morphinx using TouchDesigner.",
     tags: ["TouchDesigner", "Realtime Visuals", "Generative"],
     media: { type: "image", src: "https://i.ytimg.com/vi/DV08JyKTwFw/hqdefault.jpg" },
     size: "large",
     featured: true,
-    cta: "Watch film ↗",
+    cta: "Explore live gallery ↗",
     coord: "008 / REALTIME SYSTEM",
+  },
+  {
+    title: "ALIEN KAERLIGHED",
+    subtitle: "Psykovsky feat. Kaerlighed",
+    slug: "alien-kaerlighed",
+    href: "/live-gallery",
+    blurb: "AI film and generative visuals for a Psykovsky collaboration.",
+    tags: ["AI Film", "Generative Visuals", "Music Video"],
+    media: { type: "image", src: "https://i.ytimg.com/vi/H0GoE1uUFRo/hqdefault.jpg" },
+    size: "medium",
+    cta: "Explore live gallery ↗",
+    coord: "002 / FILM ARCHIVE",
   },
   {
     title: "Semantic Lab",

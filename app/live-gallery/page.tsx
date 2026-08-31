@@ -1,21 +1,17 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import SystemBackground from "../../components/SystemBackground";
-import { liveGallery } from "../portfolio-data";
+import { filmArchive } from "../portfolio-data";
 
 export default function LiveGalleryPage() {
-  const [activeVideo, setActiveVideo] = useState(0);
+  const featuredFilms = filmArchive.filter((film) => film.featured);
+  const archiveFilms = filmArchive.filter((film) => !film.featured);
 
   return (
-    <main className="lab-page lab-subpage">
+    <main className="lab-page lab-subpage film-archive-page">
       <SystemBackground />
       <header className="lab-nav">
-        <Link href="/" className="lab-mark">
-          Aishwarya S
-        </Link>
+        <Link href="/" className="lab-mark">Aishwarya S</Link>
         <nav className="lab-nav__links" aria-label="Primary">
           <Link href="/">Home</Link>
           <Link href="/semantic-lab">Semantic Lab</Link>
@@ -24,80 +20,56 @@ export default function LiveGalleryPage() {
         </nav>
       </header>
 
-      <section className="subpage-hero">
+      <section className="subpage-hero film-archive-hero">
         <div className="section-intro section-intro--wide">
-          <span className="section-kicker">TouchDesigner / Live Performance</span>
-          <h1 className="subpage-title">Moving image gets its own dedicated page.</h1>
-          <p>
-            The gallery now opens away from the homepage so clips, posters, and playback controls
-            are easier to handle without crowding the hero scene.
-          </p>
+          <span className="section-kicker">Live Gallery</span>
+          <h1 className="subpage-title">AI Film / Music Visuals / Realtime Experiments</h1>
+          <p>Moving-image works created across generative AI, realtime graphics, experimental animation, image synthesis, editing, and audiovisual systems.</p>
         </div>
       </section>
 
-      <section className="live-lab subpage-section">
-        <div className="live-viewer live-viewer--wide">
-          <div
-            className={
-              liveGallery[activeVideo].frame === "compact"
-                ? "live-viewer__player live-viewer__player--compact"
-                : "live-viewer__player"
-            }
-          >
-            {liveGallery[activeVideo].youtubeId ? (
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${liveGallery[activeVideo].youtubeId}`}
-                title={liveGallery[activeVideo].title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            ) : (
-              <video
-                key={activeVideo}
-                src={liveGallery[activeVideo].src}
-                poster={liveGallery[activeVideo].poster}
-                preload="metadata"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-              />
-            )}
-            <div className="live-viewer__label">
-              <span>{liveGallery[activeVideo].title}</span>
-              {liveGallery[activeVideo].artist && <strong>{liveGallery[activeVideo].artist}</strong>}
-              <p>{liveGallery[activeVideo].note}</p>
-            </div>
-          </div>
-
-          <div className="live-viewer__selectors">
-            {liveGallery.map((item, index) => (
-              item.href ? (
-                <Link key={item.title} href={item.href} className="live-thumb">
-                  <img src={item.poster} alt={item.title} className="object-cover" />
-                  <span>{item.title}</span>
-                </Link>
-              ) : <button
-                key={item.title}
-                type="button"
-                className={index === activeVideo ? "live-thumb is-active" : "live-thumb"}
-                onClick={() => setActiveVideo(index)}
-              >
-                <img src={item.poster} alt={item.title} className="object-cover" />
-                <span>{item.title}</span>
-              </button>
-            ))}
-          </div>
+      <section className="film-section subpage-section">
+        <div className="film-section__heading">
+          <span className="section-kicker">Featured films</span>
+          <p>Selected works at the intersection of music, generative image, and realtime visual systems.</p>
+        </div>
+        <div className="film-grid film-grid--featured">
+          {featuredFilms.map((film) => <FilmCard key={film.youtubeId} film={film} />)}
         </div>
       </section>
 
-      <section className="subpage-footer-link">
-        <Link href="/about" className="signal-button">
-          Next: About
-          <FaArrowRight size={14} />
-        </Link>
+      <section className="film-section subpage-section">
+        <div className="film-section__heading">
+          <span className="section-kicker">Archive / 001–008</span>
+          <p>Music videos, experimental film, audiovisual studies, and live visual documentation.</p>
+        </div>
+        <div className="film-grid">
+          {archiveFilms.map((film) => <FilmCard key={film.youtubeId} film={film} />)}
+        </div>
       </section>
     </main>
+  );
+}
+
+function FilmCard({ film }: { film: (typeof filmArchive)[number] }) {
+  const filmUrl = `https://www.youtube.com/watch?v=${film.youtubeId}`;
+
+  return (
+    <article className={film.featured ? "film-card film-card--featured" : "film-card"}>
+      <a href={filmUrl} target="_blank" rel="noreferrer" className="film-card__poster" aria-label={`Watch ${film.title}`}>
+        <img src={`https://i.ytimg.com/vi/${film.youtubeId}/maxresdefault.jpg`} alt={`${film.artist} — ${film.title}`} />
+        <span className="film-card__scan" aria-hidden="true" />
+        <span className="film-card__watch">Watch film <FaArrowUpRightFromSquare size={12} /></span>
+      </a>
+      <div className="film-card__content">
+        <span className="film-card__number">{film.number} / Film</span>
+        <h2>{film.title}</h2>
+        <p className="film-card__artist">{film.artist}</p>
+        <p className="film-card__note">{film.note}</p>
+        <div className="film-card__tags">
+          {film.tags.map((tag) => <span key={tag}>{tag}</span>)}
+        </div>
+      </div>
+    </article>
   );
 }
