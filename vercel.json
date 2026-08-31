@@ -1,0 +1,31 @@
+{
+  "headers": [
+    {
+      "source": "/live-systems/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/semantic-lab/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/projects/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ]
+}
