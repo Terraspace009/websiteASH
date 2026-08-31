@@ -7,6 +7,14 @@ export const materialModes = [
 
 export const terraSystems = [
   {
+    title: "TERRA Hand Performer",
+    concept:
+      "A browser-based gesture synth that turns webcam hand pose into pitch, filter brightness, pads, and note triggers.",
+    href: "/experiments/terra-hand-performer/",
+    accent: "MediaPipe Hands / Tone.js synth",
+    cta: "Open Instrument",
+  },
+  {
     title: "TERRA Studio",
     concept:
       "The original TERRA identity space for visual experiments, interface studies, and performance-led composition.",
@@ -240,6 +248,18 @@ export type GalleryProject = {
 };
 
 export const galleryProjects: GalleryProject[] = [
+  {
+    title: "TERRA Hand Performer",
+    slug: "terra-hand-performer",
+    href: "/experiments/terra-hand-performer/",
+    blurb: "Webcam hand tracking mapped into an expressive browser synth with glowing gesture trails.",
+    tags: ["MediaPipe", "Tone.js", "Gesture Synth"],
+    media: { type: "image", src: "/gallery/gesture-instrument-td.jpg" },
+    size: "large",
+    featured: true,
+    cta: "Open instrument",
+    coord: "HAND / AUDIO / BROWSER",
+  },
   {
     title: "ALIEN KAERLIGHED",
     subtitle: "Psykovsky feat. Kaerlighed",
