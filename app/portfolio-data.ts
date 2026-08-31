@@ -348,7 +348,7 @@ export const galleryProjects: GalleryProject[] = [
     coord: "VENUE ARCHIVE",
   },
   {
-    title: "CodeX Beverage Prediction",
+    title: "Machine Learning",
     slug: "codex-beverage-prediction",
     href: "/selected-work",
     blurb: "Price-range prediction interface trained on beverage purchase data.",
