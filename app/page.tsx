@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       <section className="gallery-grid" aria-label="Selected work">
-        {galleryProjects.map((project) => (
+        {galleryProjects.filter((project) => project.home !== false).map((project) => (
           <GalleryTile key={project.slug} project={project} />
         ))}
       </section>

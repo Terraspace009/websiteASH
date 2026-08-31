@@ -235,23 +235,11 @@ export type GalleryProject = {
   size: "large" | "medium" | "small";
   featured?: boolean;
   cta?: string;
+  home?: boolean;
   coord: string;
 };
 
 export const galleryProjects: GalleryProject[] = [
-  {
-    title: "PERPETUAL EXISTENCE",
-    subtitle: "Morphinx & Krishpill",
-    slug: "perpetual-existence",
-    href: "/live-gallery",
-    blurb: "Realtime audiovisual work developed with Morphinx using TouchDesigner.",
-    tags: ["TouchDesigner", "Realtime Visuals", "Generative"],
-    media: { type: "image", src: "https://i.ytimg.com/vi/DV08JyKTwFw/hqdefault.jpg" },
-    size: "large",
-    featured: true,
-    cta: "Explore live gallery ↗",
-    coord: "008 / REALTIME SYSTEM",
-  },
   {
     title: "ALIEN KAERLIGHED",
     subtitle: "Psykovsky feat. Kaerlighed",
@@ -281,7 +269,7 @@ export const galleryProjects: GalleryProject[] = [
     external: true,
     blurb: "Webcam emotion inference as a cinematic HUD readout.",
     tags: ["Computer Vision", "Streamlit", "Emotion AI"],
-    media: { type: "video", src: "/live-systems/pointcloud-mesh-study.mp4", poster: "/live-systems/pointcloud-mesh-study-poster.jpg" },
+    media: { type: "image", src: "/gallery/terra-cypher-ui.png" },
     size: "medium",
     coord: "WEBCAM / HUD",
   },
@@ -293,6 +281,7 @@ export const galleryProjects: GalleryProject[] = [
     tags: ["TouchDesigner", "Laser", "Live Performance"],
     media: { type: "video", src: "/live-systems/venue-laser-set.mp4", poster: "/live-systems/venue-laser-set-poster.jpg" },
     size: "large",
+    home: false,
     coord: "CLUB / FESTIVAL",
   },
   {
@@ -313,6 +302,7 @@ export const galleryProjects: GalleryProject[] = [
     tags: ["TouchDesigner", "Hand Tracking", "POPs"],
     media: { type: "image", src: "/gallery/gesture-instrument-td.jpg" },
     size: "medium",
+    home: false,
     coord: "POSE / 5-PT TRACK",
   },
   {
@@ -323,6 +313,7 @@ export const galleryProjects: GalleryProject[] = [
     tags: ["Point Cloud", "Depth Scan", "POPs"],
     media: { type: "image", src: "/gallery/pointcloud-scan.jpg" },
     size: "small",
+    home: false,
     coord: "DEPTH SCAN",
   },
   {
@@ -333,6 +324,7 @@ export const galleryProjects: GalleryProject[] = [
     tags: ["Live Rig", "Bookings", "Archive"],
     media: { type: "image", src: "/gallery/live-performance.jpg" },
     size: "small",
+    home: false,
     coord: "VENUE ARCHIVE",
   },
   {
