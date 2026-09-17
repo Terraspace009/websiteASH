@@ -1,58 +1,92 @@
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa6";
-import AboutPanorama from "../../components/AboutPanorama";
-import SystemBackground from "../../components/SystemBackground";
-import CertificationCard from "../../components/CertificationCard";
+import type { Metadata } from "next";
+import Image from "next/image";
 import { credentials } from "../portfolio-data";
-
+export const metadata: Metadata = { title: "About" };
 export default function AboutPage() {
   return (
-    <main className="lab-page lab-subpage">
-      <SystemBackground />
-      <header className="lab-nav">
-        <Link href="/" className="lab-mark">
-          Aishwarya S
-        </Link>
-        <nav className="lab-nav__links" aria-label="Primary">
-          <Link href="/">Home</Link>
-          <Link href="/semantic-lab">Semantic Lab</Link>
-          <Link href="/terra-systems">TERRA Systems</Link>
-          <Link href="/selected-work">Index</Link>
-        </nav>
-      </header>
-
-      <section className="subpage-hero about-hero--portrait">
-        <div className="section-intro section-intro--wide about-hero__row">
-          <div>
-            <span className="section-kicker">About</span>
-            <h1 className="subpage-title">Practice notes in a dedicated HUD page.</h1>
+    <main id="main-content" className="page" tabIndex={-1}>
+      <section className="page-intro about-intro">
+        <div>
+          <p className="eyebrow">About</p>
+          <h1>Aishwarya Shukla</h1>
+          <p className="intro-role">
+            AI engineer, creative technologist
+            <br />
+            and visual systems artist.
+          </p>
+          <p>
+            I’m a data science graduate working with machine learning, computer
+            vision and real-time graphics. Under the name TerraSpace, I also
+            make music visuals and interactive experiments.
+          </p>
+          <p>
+            I’m interested in what happens after a model produces an output: how
+            a tracked gesture controls sound, how segmentation changes an image,
+            and how data becomes a visual system.
+          </p>
+          <a
+            className="text-link"
+            href="/Aishwarya_Shukla_Final_CV.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View résumé ↗
+          </a>
+        </div>
+        <figure className="portrait">
+          <Image
+            src="/gallery/portrait.jpg"
+            alt="Aishwarya Shukla"
+            fill
+            sizes="(max-width: 700px) 100vw, 40vw"
+            priority
+          />
+        </figure>
+      </section>
+      <section className="section">
+        <div className="section-heading">
+          <h2>Tools & approach</h2>
+        </div>
+        <div className="prose-grid">
+          <article>
+            <h3>Machine learning</h3>
             <p>
-              The artist-engineer statement now has its own page instead of competing with the hero,
-              projects, and video system on the same scroll.
+              Python, PyTorch and TensorFlow for models and inference. Streamlit
+              for application interfaces.
             </p>
-          </div>
-          <img src="/gallery/portrait.jpg" alt="Aishwarya S" className="about-hero__portrait" />
+          </article>
+          <article>
+            <h3>Computer vision</h3>
+            <p>
+              OpenCV, MediaPipe and SegFormer for image processing, hand
+              tracking and semantic segmentation.
+            </p>
+          </article>
+          <article>
+            <h3>Visual systems</h3>
+            <p>
+              TouchDesigner, GLSL and POPs for real-time graphics. React and
+              Tone.js for browser interactions and sound.
+            </p>
+          </article>
         </div>
       </section>
-
-      <section className="about-lab subpage-section">
-        <AboutPanorama />
-      </section>
-
-      <section className="subpage-section credentials-section">
-        <span className="section-kicker">Training / credentials</span>
-        <div className="credentials-grid">
-          {credentials.map((item) => (
-            <CertificationCard key={item.title} title={item.title} org={item.org} href={item.href} />
+      <section className="section">
+        <div className="section-heading">
+          <h2>Training</h2>
+          <span>The NODE Institute</span>
+        </div>
+        <div className="link-list">
+          {credentials.map((c) => (
+            <a key={c.title} href={c.href} target="_blank" rel="noreferrer">
+              <span>
+                {c.title}
+                <small>{c.org}</small>
+              </span>
+              <span aria-hidden="true">↗</span>
+            </a>
           ))}
         </div>
-      </section>
-
-      <section className="subpage-footer-link">
-        <Link href="/selected-work" className="signal-button">
-          Next: Selected Work
-          <FaArrowRight size={14} />
-        </Link>
       </section>
     </main>
   );

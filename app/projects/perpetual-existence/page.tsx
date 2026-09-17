@@ -1,46 +1,54 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa6";
-import SystemBackground from "../../../components/SystemBackground";
-
+export const metadata: Metadata = { title: "Perpetual Existence" };
 export default function PerpetualExistencePage() {
   return (
-    <main className="lab-page lab-subpage">
-      <SystemBackground />
-      <header className="lab-nav">
-        <Link href="/" className="lab-mark">Aishwarya S</Link>
-        <nav className="lab-nav__links" aria-label="Primary">
-          <Link href="/">Home</Link>
-          <Link href="/live-gallery">Live Gallery</Link>
-          <Link href="/terra-systems">TERRA Systems</Link>
-        </nav>
-      </header>
-
-      <section className="subpage-hero">
-        <div className="section-intro section-intro--wide">
-          <span className="section-kicker">008 / TouchDesigner &amp; Realtime Graphics</span>
-          <h1 className="subpage-title">Perpetual Existence</h1>
-          <p>Morphinx &amp; Krishpill. Official video by Terra Space, created in collaboration with Morphinx using TouchDesigner.</p>
-        </div>
-      </section>
-
-      <section className="subpage-section">
-        <div className="live-viewer live-viewer--wide">
-          <div className="live-viewer__player">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/DV08JyKTwFw"
-              title="Morphinx & Krishpill - Perpetual Existence"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </div>
-        <p className="project-technical-note">
-          A realtime audiovisual work developed with Morphinx using TouchDesigner, exploring generative visual systems and sound-driven moving image.
+    <main id="main-content" className="page" tabIndex={-1}>
+      <section className="page-intro">
+        <p className="eyebrow">TouchDesigner / Music video</p>
+        <h1>Perpetual Existence</h1>
+        <p>
+          Morphinx & Krishpill. Official video by Terra Space, developed with
+          Morphinx using TouchDesigner.
         </p>
       </section>
-
-      <section className="subpage-footer-link">
-        <Link href="/live-gallery" className="signal-button">Back to Live Gallery <FaArrowRight size={14} /></Link>
+      <div className="film-player">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/DV08JyKTwFw"
+          title="Morphinx & Krishpill — Perpetual Existence"
+          loading="lazy"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+      <section className="case-section">
+        <h2>Overview</h2>
+        <p>
+          A music video using real-time generative graphics. The work brings
+          TouchDesigner’s visual systems into a finished audiovisual piece.
+        </p>
+      </section>
+      <section className="case-section">
+        <h2>Process & visual output</h2>
+        <p>
+          Developed in collaboration with Morphinx. The finished film documents
+          the visual compositions and their relationship to the music.
+        </p>
+      </section>
+      <section className="case-section">
+        <h2>Tools & credits</h2>
+        <div>
+          <p>
+            Visual system: TouchDesigner
+            <br />
+            Video: Terra Space, with Morphinx
+            <br />
+            Music: Morphinx & Krishpill
+          </p>
+          <Link className="text-link" href="/live-gallery">
+            More films & visuals ↗
+          </Link>
+        </div>
       </section>
     </main>
   );

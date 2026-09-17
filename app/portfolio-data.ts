@@ -9,34 +9,33 @@ export const terraSystems = [
   {
     title: "TERRA Hand Performer",
     concept:
-      "A browser-based gesture synth that turns webcam hand pose into pitch, filter brightness, pads, and note triggers.",
+      "A webcam-controlled synthesizer built with MediaPipe Hands and Tone.js. Hand position changes pitch and filter; gestures trigger or sustain sound.",
     href: "/experiments/terra-hand-performer/",
     accent: "MediaPipe Hands / Tone.js synth",
-    cta: "Open Instrument",
+    cta: "Open instrument",
   },
   {
     title: "TERRA Studio",
     concept:
-      "The original TERRA identity space for visual experiments, interface studies, and performance-led composition.",
+      "An archive of TERRA visual experiments, interface studies and compositions.",
     href: "https://aeshwarya-portfolio.vercel.app/",
-    accent: "studio world / live archive",
-    cta: "Open Archive",
+    accent: "Visual studies / Archive",
+    cta: "View archive",
   },
   {
     title: "TERRA Visual",
-    concept:
-      "A visual-machine language exploring screen choreography, interface rhythm, and dark realtime aesthetics.",
+    concept: "Source repository for TERRA visual and interface experiments.",
     href: "https://github.com/Terraspace009/Terra1",
-    accent: "visual machine language",
+    accent: "Visual systems / Source code",
     cta: "View GitHub",
   },
   {
     title: "TERRA Cypher",
     concept:
-      "Emotion and webcam inference translated into a cinematic HUD with a performance-facing visual readout.",
+      "A Streamlit webcam application displaying facial-expression predictions alongside the camera input.",
     href: "https://terra-cypherweb-b8yxnpeu9rjnwikjcf45jy.streamlit.app/",
-    accent: "emotion HUD / webcam AI",
-    cta: "Open Experience",
+    accent: "Computer vision / Streamlit",
+    cta: "Open application",
   },
 ];
 
@@ -57,29 +56,29 @@ export const liveGallery: LiveGalleryItem[] = [
     artist: "Morphinx & Krishpill",
     youtubeId: "DV08JyKTwFw",
     poster: "https://i.ytimg.com/vi/DV08JyKTwFw/hqdefault.jpg",
-    note: "A realtime audiovisual work developed with Morphinx using TouchDesigner.",
+    note: "An audiovisual work developed with Morphinx using TouchDesigner.",
     frame: "full",
     href: "/projects/perpetual-existence",
   },
   {
     title: "Live Laser + Visual Set",
-    src: "/live-systems/venue-laser-set.mp4",
-    poster: "/live-systems/venue-laser-set-poster.jpg",
-    note: "Laser and projection system running live at a club date — full rig, real room.",
+
+    poster: "/gallery/live-performance.jpg",
+    note: "Documentation of a live laser and projection setup.",
     frame: "full",
   },
   {
     title: "Live Capture Study",
     src: "/live-systems/PXL_20260403_230034557.mp4",
     poster: "/live-systems/6237937903338196662.jpg",
-    note: "Embodied movement, live response, and performance texture.",
+    note: "A recorded study of movement and live visual response.",
     frame: "compact",
   },
   {
     title: "Temple Signal Study",
     src: "/live-systems/temmple.mp4",
     poster: "/live-systems/6237937903338196684.jpg",
-    note: "Architectural glow, ritual pacing, and spatial atmosphere.",
+    note: "A moving-image study of architecture, light and pacing.",
     frame: "compact",
   },
 ];
@@ -95,34 +94,79 @@ export type FilmArchiveItem = {
 };
 
 export const filmArchive: FilmArchiveItem[] = [
-  { number: "001", title: "Safe And Sound", artist: "Psykovsky", youtubeId: "lvllqpqg1yA", tags: ["AI Film", "Music Visual", "Generative"], note: "Generative moving image for Psykovsky." },
-  { number: "002", title: "Alien Kaerlighed", artist: "Psykovsky feat. Kaerlighed", youtubeId: "H0GoE1uUFRo", tags: ["AI Film", "Generative Visuals", "Music Video"], featured: true, note: "A primary work in the AI film and music-visual archive." },
-  { number: "003", title: "Polenta", artist: "Psykovsky feat. Terra Fiamma", youtubeId: "YbCklNNRX7E", tags: ["AI Visuals", "Music Video", "Experimental"], note: "Experimental image synthesis for a high-velocity music video." },
-  { number: "004", title: "PSYSTREAM 3.0", artist: "Psykovsky", youtubeId: "VWCsCrquIKw", tags: ["Live Visuals", "Psychedelic", "Audiovisual"], note: "Long-form audiovisual archive and live visual documentation." },
-  { number: "005", title: "f02(3 24(3", artist: "Psykovsky", youtubeId: "19YwpmAHECw", tags: ["Experimental Film", "Generative", "Visual Art"], note: "Generative visual art for sound-driven moving image." },
-  { number: "006", title: "Alien Love Song — Episode 1 / 156 BPM", artist: "外星人的情歌 第 1 集", youtubeId: "GxZC0o-BH4Q", tags: ["AI Film", "Experimental", "Audiovisual"], note: "An experimental AI-film episode moving through rhythm, image, and narrative texture." },
-  { number: "007", title: "Extra Pearl / 225 BPM", artist: "Psykovsky feat. QQ IDOL", youtubeId: "ZUNjXrBHikg", tags: ["Generative Visuals", "Music Video", "AI"], note: "A fast-tempo generative visual work for Psykovsky and QQ IDOL." },
-  { number: "008", title: "Perpetual Existence", artist: "Morphinx & Krishpill", youtubeId: "DV08JyKTwFw", tags: ["TouchDesigner", "Realtime Visuals", "Generative"], featured: true, note: "Official video by Terra Space, developed with Morphinx using TouchDesigner." },
+  {
+    number: "001",
+    title: "Safe And Sound",
+    artist: "Psykovsky",
+    youtubeId: "lvllqpqg1yA",
+    tags: ["AI Film", "Music Visual", "Generative"],
+    note: "Generative moving image for Psykovsky.",
+  },
+  {
+    number: "002",
+    title: "Alien Kaerlighed",
+    artist: "Psykovsky feat. Kaerlighed",
+    youtubeId: "H0GoE1uUFRo",
+    tags: ["AI Film", "Generative Visuals", "Music Video"],
+    featured: true,
+    note: "AI-generated moving image for Psykovsky feat. Kaerlighed.",
+  },
+  {
+    number: "003",
+    title: "Polenta",
+    artist: "Psykovsky feat. Terra Fiamma",
+    youtubeId: "YbCklNNRX7E",
+    tags: ["AI Visuals", "Music Video", "Experimental"],
+    note: "An experimental music video using image synthesis.",
+  },
+  {
+    number: "004",
+    title: "PSYSTREAM 3.0",
+    artist: "Psykovsky",
+    youtubeId: "VWCsCrquIKw",
+    tags: ["Live Visuals", "Psychedelic", "Audiovisual"],
+    note: "Long-form audiovisual archive and live visual documentation.",
+  },
+  {
+    number: "005",
+    title: "f02(3 24(3",
+    artist: "Psykovsky",
+    youtubeId: "19YwpmAHECw",
+    tags: ["Experimental Film", "Generative", "Visual Art"],
+    note: "A generative moving-image work set to music.",
+  },
+  {
+    number: "006",
+    title: "Alien Love Song — Episode 1 / 156 BPM",
+    artist: "外星人的情歌 第 1 集",
+    youtubeId: "GxZC0o-BH4Q",
+    tags: ["AI Film", "Experimental", "Audiovisual"],
+    note: "An experimental AI film and music-visual episode.",
+  },
+  {
+    number: "007",
+    title: "Extra Pearl / 225 BPM",
+    artist: "Psykovsky feat. QQ IDOL",
+    youtubeId: "ZUNjXrBHikg",
+    tags: ["Generative Visuals", "Music Video", "AI"],
+    note: "Generative music visuals for Psykovsky feat. QQ IDOL.",
+  },
+  {
+    number: "008",
+    title: "Perpetual Existence",
+    artist: "Morphinx & Krishpill",
+    youtubeId: "DV08JyKTwFw",
+    tags: ["TouchDesigner", "Realtime Visuals", "Generative"],
+    featured: true,
+    note: "Official video by Terra Space, developed with Morphinx using TouchDesigner.",
+  },
 ];
 
 export const pointCloudStudies = [
   {
-    title: "Point Cloud — Tree Study",
-    src: "/live-systems/pointcloud-tree-study.mp4",
-    poster: "/live-systems/pointcloud-tree-study-poster.jpg",
-    note: "Scanned form rebuilt as a directional point field, framed by projected sightlines.",
-  },
-  {
-    title: "Point Cloud — Mesh Study",
-    src: "/live-systems/pointcloud-mesh-study.mp4",
-    poster: "/live-systems/pointcloud-mesh-study-poster.jpg",
-    note: "Figure dissolving into a moving stipple field with atmospheric color bleed.",
-  },
-  {
-    title: "Point Cloud — Network Study",
-    src: "/live-systems/pointcloud-network-study.mp4",
-    poster: "/live-systems/pointcloud-network-study-poster.jpg",
-    note: "Plexus-driven particle network, built for screen choreography and transitions.",
+    title: "Point Cloud / Kinect Studies",
+    poster: "/gallery/pointcloud-scan.jpg",
+    note: "Depth captures represented as points in space.",
   },
 ];
 
@@ -155,7 +199,7 @@ export const credentials = [
 ];
 
 export const bookingNote =
-  "Open for bookings — clubs, festivals, residencies, museums, and exhibitions.";
+  "Contact me about technical projects and visual collaborations.";
 
 export const selectedIndex = [
   {
@@ -233,13 +277,17 @@ export const homeDestinations = [
 
 export type GalleryProject = {
   title: string;
+  discipline: string;
+  year?: string;
   subtitle?: string;
   slug: string;
   href: string;
   external?: boolean;
   blurb: string;
   tags: string[];
-  media: { type: "image"; src: string } | { type: "video"; src: string; poster: string };
+  media:
+    | { type: "image"; src: string }
+    | { type: "video"; src: string; poster: string };
   size: "large" | "medium" | "small";
   featured?: boolean;
   cta?: string;
@@ -251,43 +299,54 @@ export const galleryProjects: GalleryProject[] = [
   {
     title: "TERRA Hand Performer",
     slug: "terra-hand-performer",
+    discipline: "Interactive Systems",
     href: "/experiments/terra-hand-performer/",
-    blurb: "Webcam hand tracking mapped into an expressive browser synth with glowing gesture trails.",
+    blurb:
+      "A webcam-controlled synthesizer built with MediaPipe Hands and Tone.js. Pinch and palm gestures trigger notes and sustained sound.",
     tags: ["MediaPipe", "Tone.js", "Gesture Synth"],
-    media: { type: "image", src: "/gallery/gesture-instrument-td.jpg" },
+    media: { type: "image", src: "/gallery/terra-hand-performer.png" },
     size: "large",
     featured: true,
     cta: "Open instrument",
     coord: "HAND / AUDIO / BROWSER",
   },
   {
-    title: "ALIEN KAERLIGHED",
+    title: "Alien Kaerlighed",
     subtitle: "Psykovsky feat. Kaerlighed",
     slug: "alien-kaerlighed",
+    discipline: "Film / Generative Visuals",
     href: "/live-gallery",
-    blurb: "AI film and generative visuals for a Psykovsky collaboration.",
+    blurb:
+      "Generative moving image for Psykovsky feat. Kaerlighed, combining image synthesis with music-video composition.",
     tags: ["AI Film", "Generative Visuals", "Music Video"],
-    media: { type: "image", src: "https://i.ytimg.com/vi/H0GoE1uUFRo/hqdefault.jpg" },
+    media: {
+      type: "image",
+      src: "https://i.ytimg.com/vi/H0GoE1uUFRo/hqdefault.jpg",
+    },
     size: "medium",
-    cta: "Explore live gallery ↗",
+    cta: "View films",
     coord: "002 / FILM ARCHIVE",
   },
   {
     title: "Semantic Lab",
     slug: "semantic-lab",
+    discipline: "Computer Vision",
     href: "/semantic-lab",
-    blurb: "Realtime AI segmentation — image, video, and live camera.",
+    blurb:
+      "A desktop application using SegFormer to segment images, video and webcam input, with visual materials assigned to each class.",
     tags: ["PyTorch", "SegFormer", "PySide6", "CUDA"],
     media: { type: "image", src: "/gallery/semantic-lab-cover.jpg" },
     size: "large",
-    coord: "60 FPS · CONF 0.94",
+    coord: "Computer vision",
   },
   {
     title: "TERRA-Cypher",
     slug: "terra-cypher",
+    discipline: "Computer Vision",
     href: "https://terra-cypherweb-b8yxnpeu9rjnwikjcf45jy.streamlit.app/",
     external: true,
-    blurb: "Webcam emotion inference as a cinematic HUD readout.",
+    blurb:
+      "A Streamlit interface displaying facial-expression predictions from webcam input.",
     tags: ["Computer Vision", "Streamlit", "Emotion AI"],
     media: { type: "image", src: "/gallery/terra-cypher-ui.png" },
     size: "medium",
@@ -296,10 +355,12 @@ export const galleryProjects: GalleryProject[] = [
   {
     title: "Live TouchDesigner Visual Systems",
     slug: "live-touchdesigner",
+    discipline: "TouchDesigner / Live Visuals",
     href: "/live-gallery",
-    blurb: "Rig-built visual systems performed live at venue dates.",
+    blurb:
+      "Documentation of live visual and laser setups made with TouchDesigner.",
     tags: ["TouchDesigner", "Laser", "Live Performance"],
-    media: { type: "video", src: "/live-systems/venue-laser-set.mp4", poster: "/live-systems/venue-laser-set-poster.jpg" },
+    media: { type: "image", src: "/gallery/live-performance.jpg" },
     size: "large",
     home: false,
     coord: "CLUB / FESTIVAL",
@@ -307,8 +368,10 @@ export const galleryProjects: GalleryProject[] = [
   {
     title: "TERRA Visuals",
     slug: "terra-visuals",
+    discipline: "Interactive Systems",
     href: "/terra-systems",
-    blurb: "Point-cloud environments and realtime visual studies.",
+    blurb:
+      "Browser-based visual experiments with point clouds and real-time graphics.",
     tags: ["Realtime", "Browser", "Visual Systems"],
     media: { type: "image", src: "/gallery/terra-pointcloud-study.png" },
     size: "medium",
@@ -317,19 +380,23 @@ export const galleryProjects: GalleryProject[] = [
   {
     title: "Gesture Music Instrument",
     slug: "gesture-instrument",
+    discipline: "Interactive Systems",
     href: "/live-gallery",
-    blurb: "Hand-tracked particle instrument, driven by live webcam pose.",
+    blurb:
+      "A TouchDesigner instrument using hand tracking and POPs to control particles from webcam input.",
     tags: ["TouchDesigner", "Hand Tracking", "POPs"],
     media: { type: "image", src: "/gallery/gesture-instrument-td.jpg" },
     size: "medium",
     home: false,
-    coord: "POSE / 5-PT TRACK",
+    coord: "Hand tracking",
   },
   {
     title: "Point Cloud / Kinect Studies",
     slug: "pointcloud-studies",
+    discipline: "Spatial / Point Cloud",
     href: "/live-gallery",
-    blurb: "Depth-scanned forms rebuilt as directional point fields.",
+    blurb:
+      "Kinect depth captures represented as point fields, exploring spatial form with POPs.",
     tags: ["Point Cloud", "Depth Scan", "POPs"],
     media: { type: "image", src: "/gallery/pointcloud-scan.jpg" },
     size: "small",
@@ -339,9 +406,11 @@ export const galleryProjects: GalleryProject[] = [
   {
     title: "Live Performance Archive",
     slug: "performance-archive",
+    discipline: "TouchDesigner / Live Visuals",
     href: "/live-gallery",
-    blurb: "Rig setups and gig documentation across venues.",
-    tags: ["Live Rig", "Bookings", "Archive"],
+    blurb:
+      "Photographs and recordings of visual rigs and live performance setups.",
+    tags: ["Live visuals", "Performance", "Documentation"],
     media: { type: "image", src: "/gallery/live-performance.jpg" },
     size: "small",
     home: false,
@@ -350,8 +419,10 @@ export const galleryProjects: GalleryProject[] = [
   {
     title: "Machine Learning",
     slug: "codex-beverage-prediction",
-    href: "/selected-work",
-    blurb: "Price-range prediction interface trained on beverage purchase data.",
+    discipline: "AI / Machine Learning",
+    href: "/projects/machine-learning",
+    blurb:
+      "A machine-learning application predicting price ranges from beverage purchase data and customer inputs.",
     tags: ["Machine Learning", "Prediction", "Data"],
     media: { type: "image", src: "/gallery/codex-beverage-prediction.png" },
     size: "medium",

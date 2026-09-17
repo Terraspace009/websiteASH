@@ -1,14 +1,10 @@
-"use client";
 import Image from "next/image";
-
 export type ProjectCardProps = {
   title: string;
   description: string;
-  image: string; 
+  image: string;
   demoLink?: string;
-
 };
-
 export default function ProjectCard({
   title,
   description,
@@ -16,34 +12,27 @@ export default function ProjectCard({
   demoLink,
 }: ProjectCardProps) {
   return (
-    <article className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[0.07] transition">
-      <div className="relative aspect-[16/9]">
+    <article className="work-card">
+      <div className="work-media">
         <Image
           src={image}
           alt={title}
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover opacity-90 group-hover:opacity-100"
-          priority={false}
+          sizes="(max-width: 700px) 100vw, 50vw"
         />
       </div>
-      <div className="p-4">
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="mt-1 text-sm text-white/70 leading-relaxed">{description}</p>
-
-        {demoLink && (
-          <div className="mt-4">
-            <a
-              href={demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 transition text-sm"
-            >
-              Live Demo
-            </a>
-          </div>
-        )}
-      </div>
+      <h3>{title}</h3>
+      <p>{description}</p>
+      {demoLink && (
+        <a
+          className="text-link"
+          href={demoLink}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open project ↗
+        </a>
+      )}
     </article>
   );
 }
