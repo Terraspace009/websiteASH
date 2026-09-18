@@ -1,15 +1,8 @@
 import Link from "next/link";
 import WorkCard from "../components/WorkCard";
-import { galleryProjects } from "./portfolio-data";
+import { galleryProjects, featuredSlugs } from "./portfolio-data";
 export default function Home() {
-  const selected = [
-    "semantic-lab",
-    "alien-kaerlighed",
-    "terra-hand-performer",
-    "terra-cypher",
-    "pointcloud-studies",
-    "codex-beverage-prediction",
-  ];
+  const selected = featuredSlugs;
   return (
     <main id="main-content" className="page" tabIndex={-1}>
       <section className="identity">

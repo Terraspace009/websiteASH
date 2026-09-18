@@ -10,32 +10,34 @@ export default function WorkCard({
 }) {
   const Icon = project.external ? FaArrowUpRightFromSquare : FaArrowRight;
   return (
-    <article className="work-card">
+    <article className="work-card" data-project={project.slug}>
       <a
         href={project.href}
         target={project.external ? "_blank" : undefined}
         rel={project.external ? "noreferrer" : undefined}
         className="work-card-link"
       >
-        <div className="work-media">
-          {project.media.type === "image" ? (
-            <Image
-              src={project.media.src}
-              alt={project.title + " project output"}
-              fill
-              sizes="(max-width: 700px) 100vw, 50vw"
-              priority={priority}
-            />
-          ) : (
-            <Image
-              src={project.media.poster}
-              alt={project.title + " performance"}
-              fill
-              sizes="(max-width: 700px) 100vw, 50vw"
-              priority={priority}
-            />
-          )}
-        </div>
+        {project.media && (
+          <div className="work-media">
+            {project.media.type === "image" ? (
+              <Image
+                src={project.media.src}
+                alt={project.title + " project output"}
+                fill
+                sizes="(max-width: 700px) 100vw, 50vw"
+                priority={priority}
+              />
+            ) : (
+              <Image
+                src={project.media.poster}
+                alt={project.title + " performance"}
+                fill
+                sizes="(max-width: 700px) 100vw, 50vw"
+                priority={priority}
+              />
+            )}
+          </div>
+        )}
         <div className="work-meta">
           <span>{project.discipline}</span>
           {project.year && <span>{project.year}</span>}

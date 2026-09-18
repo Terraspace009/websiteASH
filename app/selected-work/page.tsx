@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import WorkCard from "../../components/WorkCard";
-import { galleryProjects, selectedIndex } from "../portfolio-data";
+import { galleryProjects } from "../portfolio-data";
 export const metadata: Metadata = { title: "Work" };
 const groups = [
   "AI / Machine Learning",
@@ -14,15 +13,12 @@ export default function SelectedWorkPage() {
   return (
     <main id="main-content" className="page" tabIndex={-1}>
       <section className="page-intro">
-        <p className="eyebrow">Projects & studies</p>
-        <h1>Selected work</h1>
-        <p>
-          Models, interfaces and visual experiments. Each project approaches a
-          different way of working with data, images or interaction.
-        </p>
+        <p className="eyebrow">Project index</p>
+        <h1>All work</h1>
+        <p>Applications, films and visual studies, each listed once.</p>
         <nav className="category-links" aria-label="Work categories">
           {groups.map((g, i) => (
-            <a key={g} href={"#area-" + i}>
+            <a href={"#area-" + i} key={g}>
               {g}
             </a>
           ))}
@@ -33,31 +29,31 @@ export default function SelectedWorkPage() {
           <div className="section-heading">
             <h2>{group}</h2>
           </div>
-          <div className="work-grid">
+          <div className="project-index">
             {galleryProjects
               .filter((p) => p.discipline === group)
               .map((p) => (
-                <WorkCard key={p.slug} project={p} />
+                <a
+                  key={p.slug}
+                  data-project={p.slug}
+                  href={p.href}
+                  target={p.external ? "_blank" : undefined}
+                  rel={p.external ? "noreferrer" : undefined}
+                >
+                  <div>
+                    <h3>{p.title}</h3>
+                    {p.subtitle && <small>{p.subtitle}</small>}
+                  </div>
+                  <p>{p.blurb}</p>
+                  <span className="index-action">
+                    {p.cta || "View project"}{" "}
+                    <span aria-hidden="true">{p.external ? "↗" : "→"}</span>
+                  </span>
+                </a>
               ))}
           </div>
         </section>
       ))}
-      <section className="section">
-        <div className="section-heading">
-          <h2>More applications</h2>
-          <span>Live projects</span>
-        </div>
-        <div className="link-list">
-          {selectedIndex
-            .filter((p) => p.link === "external")
-            .map((p) => (
-              <a href={p.href} key={p.title} target="_blank" rel="noreferrer">
-                <span>{p.title}</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-            ))}
-        </div>
-      </section>
     </main>
   );
 }

@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+.project-index > a {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr auto;
+  gap: 32px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.project-index h3 {
+  font-size: 20px;
+}
+.project-index small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+}
+.project-index p {
+  font-size: 14px;
+  max-width: 65ch;
+}
+.index-action {
+  font-size: 13px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.project-index a:hover h3 {
+  color: var(--accent);
+}
+.project-access {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  margin-bottom: 16px;
+}
+.case-section .availability-note {
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  .project-index > a {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
 :root {
   color-scheme: dark;
   --bg: #111211;

@@ -41,6 +41,10 @@ export default function MachineLearningPage() {
           the model.
         </p>
       </section>
+      <section className="case-section">
+        <h2>Source code</h2>
+        <a className="text-link" href="https://github.com/Terraspace009/codex-beverage-app" target="_blank" rel="noreferrer">View application source ↗</a>
+      </section>
     </main>
   );
 }

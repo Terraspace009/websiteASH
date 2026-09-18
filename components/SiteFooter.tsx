@@ -18,7 +18,7 @@ export default function SiteFooter() {
           GitHub ↗
         </a>
         <a
-          href="https://www.linkedin.com/in/aishwarya-shukla-90835b57/"
+          href="https://www.linkedin.com/in/aeshwarya-shukla-90835b57/"
           target="_blank"
           rel="noreferrer"
         >
