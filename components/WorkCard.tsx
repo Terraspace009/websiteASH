@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MediaSurface from "./MediaSurface";
 import { FaArrowRight, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import type { GalleryProject } from "../app/portfolio-data";
 export default function WorkCard({
@@ -18,7 +19,7 @@ export default function WorkCard({
         className="work-card-link"
       >
         {project.media && (
-          <div className="work-media">
+          <MediaSurface project={project}>
             {project.media.type === "image" ? (
               <Image
                 src={project.media.src}
@@ -36,7 +37,7 @@ export default function WorkCard({
                 priority={priority}
               />
             )}
-          </div>
+          </MediaSurface>
         )}
         <div className="work-meta">
           <span>{project.discipline}</span>

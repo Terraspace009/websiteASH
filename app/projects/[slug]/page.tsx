@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import MediaSurface from "../../../components/MediaSurface";
 import { notFound } from "next/navigation";
 import { galleryProjects, projectDetails } from "../../portfolio-data";
 type Props = { params: Promise<{ slug: string }> };
@@ -27,17 +28,19 @@ export default async function ProjectPage({ params }: Props) {
       </section>
       {project.media && (
         <figure className="case-image">
-          <Image
-            src={
-              project.media.type === "image"
-                ? project.media.src
-                : project.media.poster
-            }
-            alt={detail.caption || project.title}
-            width={1600}
-            height={1000}
-            priority
-          />
+          <MediaSurface project={project} detail>
+            <Image
+              src={
+                project.media.type === "image"
+                  ? project.media.src
+                  : project.media.poster
+              }
+              alt={detail.caption || project.title}
+              width={1600}
+              height={1000}
+              priority
+            />
+          </MediaSurface>
           <figcaption>{detail.caption}</figcaption>
         </figure>
       )}

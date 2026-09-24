@@ -41,6 +41,7 @@ const source = fs.readFileSync(path.join(root, "app/portfolio-data.ts"), "utf8")
 assert(!source.includes("github.com/Terraspace009/Terra1"), "Unrelated repository returned");
 assert(!source.includes("aeshwarya-portfolio.vercel.app"), "Old portfolio mislabeled as project");
 for (const filename of ["components/SiteFooter.tsx", "components/Contact.tsx"]) {
-  assert(fs.readFileSync(path.join(root, filename), "utf8").includes("linkedin.com/in/aeshwarya-shukla-90835b57/"), "LinkedIn must match resume");
+  assert(!/mailto:|tel:|linkedin\.com|instagram\.com|Final_CV\.pdf/i.test(fs.readFileSync(path.join(root, filename), "utf8")), "Private contact details must not be published");
 }
+assert(!fs.existsSync(path.join(root, "public/Aishwarya_Shukla_Final_CV.pdf")), "Private resume must not be publicly served");
 console.log(galleryProjects.length + " unique projects; " + filmArchive.length + " films; canonical destinations, media and curated lists passed.");

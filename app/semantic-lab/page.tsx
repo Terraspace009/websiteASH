@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { materialModes } from "../portfolio-data";
+import MediaSurface from "../../components/MediaSurface";
+import { materialModes, galleryProjects } from "../portfolio-data";
 export const metadata: Metadata = { title: "Semantic Segmentation Visual Lab" };
 export default function SemanticLabPage() {
+  const project = galleryProjects.find((p) => p.slug === "semantic-lab")!;
   return (
     <main id="main-content" className="page" tabIndex={-1}>
       <section className="page-intro">
@@ -27,13 +29,15 @@ export default function SemanticLabPage() {
         </a>
       </section>
       <figure className="case-image">
-        <Image
-          src="/semantic-lab/semantic-preview.png"
-          alt="Semantic Lab material rendering output"
-          width={1600}
-          height={900}
-          priority
-        />
+        <MediaSurface project={project} detail>
+          <Image
+            src="/semantic-lab/semantic-preview.png"
+            alt="Semantic Lab material rendering output"
+            width={1600}
+            height={900}
+            priority
+          />
+        </MediaSurface>
         <figcaption>
           Visual output / Materials applied to segmented regions.
         </figcaption>

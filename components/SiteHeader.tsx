@@ -25,9 +25,9 @@ export default function SiteHeader() {
           </Link>
         ))}
       </nav>
-      <a className="header-contact" href="mailto:aeshu009@gmail.com">
-        Get in touch <span aria-hidden="true">↗</span>
-      </a>
+      <Link className="header-contact" href="/selected-work">
+        Explore work <span aria-hidden="true">↗</span>
+      </Link>
     </header>
   );
 }

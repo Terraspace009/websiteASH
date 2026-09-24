@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import MediaSurface from "../../../components/MediaSurface";
+import { galleryProjects } from "../../portfolio-data";
 export const metadata: Metadata = { title: "Machine Learning" };
 export default function MachineLearningPage() {
+  const project = galleryProjects.find(
+    (p) => p.slug === "codex-beverage-prediction",
+  )!;
   return (
     <main id="main-content" className="page" tabIndex={-1}>
       <section className="page-intro">
@@ -14,13 +19,15 @@ export default function MachineLearningPage() {
         </p>
       </section>
       <figure className="case-image">
-        <Image
-          src="/gallery/codex-beverage-prediction.png"
-          alt="Price prediction application with customer profile and purchase preference inputs"
-          width={1600}
-          height={900}
-          priority
-        />
+        <MediaSurface project={project} detail>
+          <Image
+            src="/gallery/codex-beverage-prediction.png"
+            alt="Price prediction application with customer profile and purchase preference inputs"
+            width={1600}
+            height={900}
+            priority
+          />
+        </MediaSurface>
         <figcaption>
           Application interface / Customer and purchase inputs.
         </figcaption>
@@ -43,7 +50,14 @@ export default function MachineLearningPage() {
       </section>
       <section className="case-section">
         <h2>Source code</h2>
-        <a className="text-link" href="https://github.com/Terraspace009/codex-beverage-app" target="_blank" rel="noreferrer">View application source ↗</a>
+        <a
+          className="text-link"
+          href="https://github.com/Terraspace009/codex-beverage-app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View application source ↗
+        </a>
       </section>
     </main>
   );

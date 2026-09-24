@@ -26,11 +26,9 @@ export default function AboutPage() {
           </p>
           <a
             className="text-link"
-            href="/Aishwarya_Shukla_Final_CV.pdf"
-            target="_blank"
-            rel="noreferrer"
+            href="/selected-work"
           >
-            View résumé ↗
+            View selected work ↗
           </a>
         </div>
         <figure className="portrait">
